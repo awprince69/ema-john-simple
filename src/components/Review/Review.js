@@ -24,7 +24,7 @@ const Review = () => {
     useEffect(() => {
         const saveCart = getDatabaseCart();
         const productKey = Object.keys(saveCart);
-        fetch('http://localhost:5000/productByKeys',{
+        fetch('https://emajhon-server.herokuapp.com/productByKeys',{
             method:'POST',
             headers:{'Content-Type': 'application/json'},
             body:JSON.stringify(productKey)
