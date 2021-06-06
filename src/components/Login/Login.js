@@ -107,7 +107,7 @@ function Login() {
                     <img src={user.photo} alt="" />
                 </div>
             }
-            <h1>our Authentication</h1>
+            <h1>Our Authentication</h1>
             <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
             <label htmlFor="newUser"> For Reregistration</label>
             <form onSubmit={handleSubmit}>

@@ -8,6 +8,14 @@ export const initializeApp = () => {
     }
 }
 
+const setIdToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
+        sessionStorage.setItem('token',idToken)
+    }).catch(function (error) {
+        // Handle error
+    });
+}
+
 export const handleSignIn = () => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     return firebase.auth()
@@ -20,6 +28,7 @@ export const handleSignIn = () => {
                 email: email,
                 photo: photoURL
             }
+            setIdToken();
             return userSignedIn;
         })
         .catch(err => {
